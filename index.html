@@ -63,6 +63,9 @@
     .content-text {
       flex: 1;
     }
+    .content-text p {
+      text-align: justify;
+    }
     ul {
       list-style: none;
       padding: 0;
@@ -73,6 +76,37 @@
       font-weight: bold;
       display: inline-block;
       width: 1em;
+    }
+    .details-toggle {
+      margin-top: 1em;
+      padding: 0.5em 1em;
+      background-color: #00bfff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .details-toggle:hover {
+      background-color: #009acd;
+    }
+    .design-highlights {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+    }
+    .design-highlights.open {
+      max-height: 500px;
+      transition: max-height 0.5s ease-in;
+    }
+    .model-divider {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.5em 1em;
+      margin: 3em 0 2em;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 10px;
+      letter-spacing: 1px;
     }
     footer {
       text-align: center;
@@ -114,7 +148,7 @@
           <li>App-Based Booking System</li>
         </ul>
       </div>
-      <img src="Aircrafts.png" alt="eVTOL Aircraft">
+      <img src="Aircrafts.png" alt="Samaardh's electric aircraft fleet">
     </div>
   </section>
 
@@ -135,12 +169,15 @@
   <section id="models">
     <h2>Aircraft Models</h2>
 
+    <!-- Model A -->
+    <div class="model-divider">Model A</div>
     <div class="content-block">
       <img src="Aircraft1.png" alt="Sky-Rider One">
       <div class="content-text">
         <h3>Model A: Sky-Rider One</h3>
         <p>Sky-Rider One is our next-generation air mobility solution built to revolutionize personal and shared transportation in dense urban areas and city-to-city routes. Combining comfort, safety, and intelligent automation, it delivers an elevated travel experience.</p>
-        <ul>
+        <button class="details-toggle">More Details</button>
+        <ul class="design-highlights">
           <li>Configuration: 6-rotor eVTOL platform</li>
           <li>Capacity: 4 passengers + luggage</li>
           <li>Autonomy: Semi-autonomous with AI-assisted navigation</li>
@@ -150,12 +187,15 @@
       </div>
     </div>
 
-    <div class="content-block">
+    <!-- Model B -->
+    <div class="model-divider">Model B</div>
+    <div class="content-block" style="flex-direction: row-reverse;">
       <img src="AircraftCargo.png" alt="Cargo Falcon">
       <div class="content-text">
         <h3>Model B: Cargo Falcon</h3>
         <p>Cargo Falcon is our high-capacity, autonomous cargo aircraft built to handle heavy payloads and last-mile delivery challenges in urban, rural, and remote environments. It will be mainly used for Industrial Logistics, Food & Medical Deliveries and Smart Supply Chains.</p>
-        <ul>
+        <button class="details-toggle">More Details</button>
+        <ul class="design-highlights">
           <li>Configuration: Tilt-wing quad-rotor with fixed cargo bay</li>
           <li>Payload Capacity: 500–800 kg</li>
           <li>Cargo Volume: 1.8 m³</li>
@@ -165,12 +205,15 @@
       </div>
     </div>
 
+    <!-- Model C -->
+    <div class="model-divider">Model C</div>
     <div class="content-block">
       <img src="AircraftMed.png" alt="Rescue Wing">
       <div class="content-text">
         <h3>Model C: Rescue Wing</h3>
         <p>Rescue Wing is our versatile, mission-critical aircraft designed for high-speed emergency deployments. From emergency evacuations to Hajj & Umrah medical response, it is built for reliability under pressure.</p>
-        <ul>
+        <button class="details-toggle">More Details</button>
+        <ul class="design-highlights">
           <li>Configuration: Tilt-rotor hybrid wing</li>
           <li>Capacity: 1 medical technician, 1 patient (stretcher-compatible)</li>
           <li>Cabin: Pressurized medical-grade cabin with essential life support systems</li>
@@ -183,11 +226,21 @@
     <h2>Get in Touch</h2>
     <p>We’re currently building our MVP and exploring funding. If you’re interested in collaboration or investment, let’s connect.</p>
     <p>Website under development.</p>
-    <p>Email: zuhair304@gmail.com</p>
+    <p>Email: <a href="mailto:zuhair304@gmail.com">zuhair304@gmail.com</a></p>
   </section>
 
   <footer>
     &copy; 2025 Samaardh Aviation. All rights reserved.
   </footer>
+
+  <script>
+    document.querySelectorAll('.details-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const ul = button.nextElementSibling;
+        ul.classList.toggle('open');
+        button.textContent = ul.classList.contains('open') ? 'Hide Details' : 'More Details';
+      });
+    });
+  </script>
 </body>
 </html>
