@@ -2,30 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Samaardh Aviation</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- AOS Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: #0d0d0d;
       color: #ffffff;
-      line-height: 1.6;
     }
     header {
       background: #000;
-      padding: 1.5em 2em;
+      padding: 1em 2em;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -33,17 +23,13 @@
     header img {
       height: 50px;
     }
-    nav {
-      display: flex;
-      gap: 1em;
-    }
     nav a {
-      padding: 0.6em 1.2em;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
+      margin: 0 0.5em;
       text-decoration: none;
-      color: #fff;
-      font-weight: 500;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.5em 1em;
+      border-radius: 999px;
       transition: background 0.3s;
     }
     nav a:hover {
@@ -51,37 +37,29 @@
     }
     .hero {
       text-align: center;
-      padding: 5em 2em 3em;
+      padding: 4em 2em;
       background: linear-gradient(to bottom right, #0d0d0d, #1a1a1a);
     }
-    .hero p.lead {
-      font-size: 1.125rem;
-      max-width: 800px;
-      margin: 0 auto 1.5em;
-      font-weight: 500;
-    }
     .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
+      font-size: 3em;
+      margin-bottom: 0.3em;
     }
-    .logo-anim {
-      width: 100px;
-      margin: 2em auto;
+    .hero p {
+      font-size: 1.2em;
+      color: #bbb;
     }
     section {
-      padding: 5em 2em;
+      padding: 4em 2em;
       max-width: 1000px;
       margin: auto;
     }
     h2 {
-      font-size: 2.5rem;
+      font-size: 2.5em;
       margin-bottom: 0.5em;
-      font-weight: 700;
     }
     h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-top: 1em;
+      font-size: 1.5em;
+      margin-top: 0;
     }
     .content-block {
       display: flex;
@@ -89,6 +67,12 @@
       align-items: center;
       gap: 2em;
       margin-top: 2em;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 2em;
+      border-radius: 1.5em;
+    }
+    .content-block:nth-child(even) {
+      flex-direction: row-reverse;
     }
     .content-block img {
       width: 100%;
@@ -100,7 +84,19 @@
     }
     .content-text p {
       text-align: justify;
-      margin-bottom: 1em;
+    }
+    .toggle-section {
+      display: none;
+      margin-top: 1em;
+    }
+    .toggle-btn {
+      margin-top: 1em;
+      padding: 0.5em 1em;
+      background: #00bfff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
     ul {
       list-style: none;
@@ -119,25 +115,40 @@
       background: #111;
       color: #777;
     }
+    .logo-animation {
+      display: flex;
+      justify-content: center;
+      margin-top: 3em;
+      margin-bottom: 3em;
+    }
+    .logo-animation img {
+      height: 120px;
+      animation: slideIn 1s ease-in-out;
+    }
+    @keyframes slideIn {
+      0% { transform: translateX(-100px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="Logo%20black.png" alt="Samaardh Logo">
+    <img src="logo.png" alt="Samaardh Logo">
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#technology">Technology</a>
-      <a href="#models">Models</a>
+      <a href="#models">Aircraft Models</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
+  <div class="logo-animation" data-aos="fade-up">
+    <img src="logo.png" alt="Animated Logo">
+  </div>
+
   <div class="hero">
-    <div class="logo-anim" data-aos="zoom-in">
-      <img src="Logo%20black.png" alt="Animated Logo" style="width:100px; height:auto;">
-    </div>
-    <p class="lead">Welcome to the future – we're revolutionizing public transport in the Kingdom of Saudi Arabia with teleportation-like networks for ultra-fast and seamless travel.</p>
+    <p>Welcome to the future – we're revolutionizing public transport in Kingdom of Saudi Arabia with teleportation-like networks for ultra-fast and seamless travel.</p>
     <h1>Across Riyadh in 10 Minutes</h1>
     <p>Eco-Friendly Air Mobility by Samaardh Aviation</p>
   </div>
@@ -149,7 +160,7 @@
 
   <section id="services">
     <h2>Our Services</h2>
-    <div class="content-block">
+    <div class="content-block" data-aos="fade-up">
       <div class="content-text">
         <ul>
           <li>Zero-Emissions & Low Noise</li>
@@ -163,7 +174,7 @@
 
   <section id="technology">
     <h2>Our Technology</h2>
-    <div class="content-block">
+    <div class="content-block" data-aos="fade-up">
       <img src="Aircraft2.png" alt="Smart Aerial Technology">
       <div class="content-text">
         <ul>
@@ -178,46 +189,67 @@
   <section id="models">
     <h2>Aircraft Models</h2>
 
-    <div class="content-block">
+    <div class="content-block" data-aos="fade-up">
       <img src="Aircraft1.png" alt="Sky-Rider One">
       <div class="content-text">
         <h3>Model A: Sky-Rider One</h3>
         <p>Sky-Rider One is our next-generation air mobility solution built to revolutionize personal and shared transportation in dense urban areas and city-to-city routes. Combining comfort, safety, and intelligent automation, it delivers an elevated travel experience.</p>
-        <ul>
-          <li>Configuration: 6-rotor eVTOL platform</li>
-          <li>Capacity: 4 passengers + luggage</li>
-          <li>Autonomy: Semi-autonomous with AI-assisted navigation</li>
-          <li>Structure: Lightweight carbon fiber composite</li>
-          <li>Cabin: Panoramic glass windows with noise-cancelling interiors</li>
-        </ul>
+        <button class="toggle-btn" onclick="toggleDetails('a')">More Details</button>
+        <div id="details-a" class="toggle-section">
+          <h4>Design Specifications</h4>
+          <ul>
+            <li>Configuration: 6-rotor eVTOL platform</li>
+            <li>Capacity: 4 passengers + luggage</li>
+            <li>Structure: Lightweight carbon fiber composite</li>
+          </ul>
+          <h4>Features</h4>
+          <ul>
+            <li>Autonomy: Semi-autonomous with AI-assisted navigation</li>
+            <li>Cabin: Panoramic glass windows with noise-cancelling interiors</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <div class="content-block" style="flex-direction: row-reverse;">
-      <img src="AircraftCargo.png" alt="Cargo Falcon">
+    <div class="content-block" data-aos="fade-up">
       <div class="content-text">
         <h3>Model B: Cargo Falcon</h3>
         <p>Cargo Falcon is our high-capacity, autonomous cargo aircraft built to handle heavy payloads and last-mile delivery challenges in urban, rural, and remote environments. It will be mainly used for Industrial Logistics, Food & Medical Deliveries and Smart Supply Chains.</p>
-        <ul>
-          <li>Configuration: Tilt-wing quad-rotor with fixed cargo bay</li>
-          <li>Payload Capacity: 500–800 kg</li>
-          <li>Cargo Volume: 1.8 m³</li>
-          <li>Loading Mechanism: Rear hatch and modular drone-docking pallets</li>
-          <li>Propulsion: Fully electric</li>
-        </ul>
+        <button class="toggle-btn" onclick="toggleDetails('b')">More Details</button>
+        <div id="details-b" class="toggle-section">
+          <h4>Design Specifications</h4>
+          <ul>
+            <li>Configuration: Tilt-wing quad-rotor with fixed cargo bay</li>
+            <li>Payload Capacity: 500–800 kg</li>
+            <li>Cargo Volume: 1.8 m³</li>
+          </ul>
+          <h4>Features</h4>
+          <ul>
+            <li>Loading Mechanism: Rear hatch and modular drone-docking pallets</li>
+            <li>Propulsion: Fully electric</li>
+          </ul>
+        </div>
       </div>
+      <img src="AircraftCargo.png" alt="Cargo Falcon">
     </div>
 
-    <div class="content-block">
+    <div class="content-block" data-aos="fade-up">
       <img src="AircraftMed.png" alt="Rescue Wing">
       <div class="content-text">
         <h3>Model C: Rescue Wing</h3>
         <p>Rescue Wing is our versatile, mission-critical aircraft designed for high-speed emergency deployments. From emergency evacuations to Hajj & Umrah medical response, it is built for reliability under pressure.</p>
-        <ul>
-          <li>Configuration: Tilt-rotor hybrid wing</li>
-          <li>Capacity: 1 medical technician, 1 patient (stretcher-compatible)</li>
-          <li>Cabin: Pressurized medical-grade cabin with essential life support systems</li>
-        </ul>
+        <button class="toggle-btn" onclick="toggleDetails('c')">More Details</button>
+        <div id="details-c" class="toggle-section">
+          <h4>Design Specifications</h4>
+          <ul>
+            <li>Configuration: Tilt-rotor hybrid wing</li>
+          </ul>
+          <h4>Features</h4>
+          <ul>
+            <li>Capacity: 1 medical technician, 1 patient (stretcher-compatible)</li>
+            <li>Cabin: Pressurized medical-grade cabin with essential life support systems</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -233,13 +265,13 @@
     &copy; 2025 Samaardh Aviation. All rights reserved.
   </footer>
 
-  <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
+    AOS.init();
+    function toggleDetails(id) {
+      const section = document.getElementById(`details-${id}`);
+      section.style.display = section.style.display === 'block' ? 'none' : 'block';
+    }
   </script>
 </body>
 </html>
