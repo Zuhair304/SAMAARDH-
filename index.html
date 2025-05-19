@@ -21,7 +21,7 @@
       justify-content: space-between;
     }
     header img {
-      height: 50px;
+      height: 80px; /* Increased logo size */
     }
     nav a {
       margin: 0 0.5em;
@@ -41,12 +41,16 @@
       background: linear-gradient(to bottom right, #0d0d0d, #1a1a1a);
     }
     .hero h1 {
-      font-size: 3em;
-      margin-bottom: 0.3em;
+      font-size: 3.5em;
+      font-weight: 700;
+      margin: 0.3em 0;
     }
     .hero p {
-      font-size: 1.2em;
+      font-size: 1.25em;
       color: #bbb;
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 500;
     }
     section {
       padding: 4em 2em;
@@ -129,6 +133,12 @@
       0% { transform: translateX(-100px); opacity: 0; }
       100% { transform: translateX(0); opacity: 1; }
     }
+    .tagline {
+      font-size: 1.4em;
+      font-weight: 600;
+      color: #00bfff;
+      margin-bottom: 1em;
+    }
   </style>
 </head>
 <body>
@@ -148,16 +158,18 @@
   </div>
 
   <div class="hero">
-    <p>Welcome to the future – we're revolutionizing public transport in Kingdom of Saudi Arabia with teleportation-like networks for ultra-fast and seamless travel.</p>
+    <p class="tagline">Welcome to the future – we're revolutionizing public transport in Kingdom of Saudi Arabia with teleportation-like networks for ultra-fast and seamless travel.</p>
     <h1>Across Riyadh in 10 Minutes</h1>
     <p>Eco-Friendly Air Mobility by Samaardh Aviation</p>
   </div>
 
   <section id="about">
     <h2>About Us</h2>
-    <p>Imagine getting across Riyadh in just 10 minutes — no traffic, no noise, no pollution. At Samaardh Aviation, we’re turning that vision into a reality.</p>
+    <p><strong>Imagine getting across Riyadh in just 10 minutes — no traffic, no noise, no pollution. At Samaardh Aviation, we’re turning that vision into a reality.</strong></p>
+    <p>Samaardh Aviation is an emerging urban air mobility startup based in Saudi Arabia, focused on developing the Kingdom’s first electric air taxi platform using eVTOL (Electric Vertical Take-Off and Landing) technology.</p>
+    <p>We are building a full-stack solution that integrates modern eVTOL aircraft, app-based on-demand booking, and strategically located vertiports across key urban zones like airports, hospitals, and business centers. Our model is designed to support daily commutes, premium tourism, and urgent logistics for both consumers and enterprises.</p>
   </section>
-
+  
   <section id="services">
     <h2>Our Services</h2>
     <div class="content-block" data-aos="fade-up">
