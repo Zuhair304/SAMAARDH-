@@ -47,17 +47,10 @@
       background: linear-gradient(to bottom right, #0d0d0d, #1a1a1a);
     }
     .hero .tagline {
-      font-size: 2em;
-      font-weight: 500;
-      color: #00bfff;
-      margin-bottom: 1em;
-    }
-    .hero h1 {
-      font-family: 'DM Sans', sans-serif;
       font-size: 3em;
       font-weight: 700;
-      margin: 0.3em 0;
       color: #ffffff;
+      margin-bottom: 1em;
     }
     .hero p {
       font-size: 1.25em;
@@ -71,13 +64,27 @@
       max-width: 1000px;
       margin: auto;
     }
-    h2 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
+    h1 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 3em;
+      font-weight: 700;
+      margin: 0.3em 0;
     }
-    h3 {
-      font-size: 1.5em;
-      margin-top: 0;
+    .section-highlight {
+      text-align: center;
+      padding: 2em 1em;
+      background: #1a1a1a;
+      font-size: 2em;
+      font-weight: 600;
+      color: #00bfff;
+    }
+    #about h1 {
+      font-size: 3em;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      margin-bottom: 0.2em;
+      text-align: center;
+      color: #00bfff;
     }
     .content-block {
       display: flex;
@@ -126,57 +133,43 @@
       font-weight: bold;
       display: inline-block;
       width: 1em;
-    }
-    footer {
-      text-align: center;
-      padding: 2em;
-      background: #111;
-      color: #777;
-    }
-    .logo-animation {
-      display: flex;
-      justify-content: center;
-      margin-top: 3em;
-      margin-bottom: 3em;
-    }
-    .logo-animation img {
-      height: 120px;
-      animation: slideIn 1s ease-in-out;
-    }
-    @keyframes slideIn {
-      0% { transform: translateX(-100px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
+      margin-left: -1em;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.png" alt="Samaardh Logo">
+    <img src="logo.png" alt="Samaardh Aviation Logo">
     <nav>
       <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#technology">Technology</a>
-      <a href="#models">Aircraft Models</a>
-      <a href="#contact">Contact</a>
+      <a href="#vision">Vision</a>
+      <a href="#aircraft">Aircraft</a>
     </nav>
   </header>
 
-  <div class="logo-animation" data-aos="fade-up">
-    <img src="logo.png" alt="Animated Logo">
-  </div>
+  <section class="hero">
+    <div class="tagline">Welcome to the Future</div>
+    <p>Samaardh Aviation is reimagining urban mobility with clean, quiet, and efficient air taxis across Saudi Arabia.</p>
+  </section>
 
-  <div class="hero">
-    <p class="tagline">Welcome to the future – we're revolutionizing public transport in Kingdom of Saudi Arabia with teleportation-like networks for ultra-fast and seamless travel.</p>
-    <h1>Across Riyadh in 10 Minutes</h1>
-    <p>Eco-Friendly Air Mobility by Samaardh Aviation</p>
-  </div>
+  <section class="section-highlight">
+    Across Riyadh in 10 Minutes.
+  </section>
 
   <section id="about">
-    <h2>About Us</h2>
-    <p><strong>Imagine getting across Riyadh in just 10 minutes — no traffic, no noise, no pollution. At Samaardh Aviation, we’re turning that vision into a reality.</strong></p>
-    <p>Samaardh Aviation is an emerging urban air mobility startup based in Saudi Arabia, focused on developing the Kingdom’s first electric air taxi platform using eVTOL (Electric Vertical Take-Off and Landing) technology.</p>
-    <p>We are building a full-stack solution that integrates modern eVTOL aircraft, app-based on-demand booking, and strategically located vertiports across key urban zones like airports, hospitals, and business centers. Our model is designed to support daily commutes, premium tourism, and urgent logistics for both consumers and enterprises.</p>
+    <h1>About Samaardh</h1>
+    <div class="content-block">
+      <div class="content-text">
+        <h3>Revolutionizing Air Mobility</h3>
+        <p>Samaardh Aviation is a Saudi-based startup focused on transforming how people move within and between cities. Using electric vertical take-off and landing (eVTOL) aircraft, we aim to provide fast, clean, and safe transport solutions that reduce congestion and improve quality of life.</p>
+      </div>
+      <img src="about-image.jpg" alt="eVTOL flying over Riyadh">
+    </div>
   </section>
+
+</body>
+</html>
 
   <section id="services">
     <h2>Our Services</h2>
