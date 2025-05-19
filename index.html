@@ -2,192 +2,182 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Samaardh Aviation is pioneering eVTOL air taxi services in Saudi Arabia, focused on sustainable urban mobility." />
-  <title>Samaardh Aviation | eVTOL Air Taxis in Saudi Arabia</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samaardh Aviation</title>
+  <meta name="description" content="Samaardh Aviation is revolutionizing air mobility in Saudi Arabia with eVTOL aircraft for fast, clean, and quiet urban travel.">
+  <meta name="keywords" content="eVTOL, Air Taxi, Urban Air Mobility, Samaardh Aviation, Saudi Arabia, Riyadh, Electric Aircraft">
+  <meta name="author" content="Samaardh Aviation">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #0e0e0e;
+      font-family: 'Inter', sans-serif;
+      background-color: #0d0d0d;
       color: #ffffff;
     }
     header {
-      background-color: #111;
-      padding: 1rem 2rem;
+      background: #000;
+      padding: 1em 2em;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
     }
-    .logo img {
-      height: 50px;
-      width: auto;
-    }
-    nav {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+    header img {
+      height: 80px;
     }
     nav a {
-      color: #ffffff;
+      margin: 0 0.5em;
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.5em 1em;
+      border-radius: 999px;
+      transition: background 0.3s;
     }
     nav a:hover {
-      color: #0ff;
+      background: rgba(255, 255, 255, 0.2);
     }
-    .main-section {
+    .hero {
       text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(145deg, #1a1a1a, #121212);
+      padding: 4em 2em;
+      background: linear-gradient(to bottom right, #0d0d0d, #1a1a1a);
     }
-    .main-section h1 {
-      font-size: 2.5rem;
-      color: #00e5ff;
+    .hero .tagline {
+      font-size: 2em;
+      font-weight: 500;
+      color: #00bfff;
+      margin-bottom: 1em;
     }
-    .main-section p {
+    .hero h1 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 3em;
+      font-weight: 700;
+      margin: 0.3em 0;
+      color: #ffffff;
+    }
+    .hero p {
+      font-size: 1.25em;
+      color: #bbb;
       max-width: 700px;
-      margin: 1rem auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #ccc;
+      margin: 0 auto;
+      font-weight: 500;
     }
-    .aircraft-image img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 2rem;
+    section {
+      padding: 4em 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+    h3 {
+      font-size: 1.5em;
+      margin-top: 0;
     }
     .content-block {
-      padding: 4rem 2rem;
-      background-color: #1c1c1c;
-      text-align: center;
-    }
-    .content-block h2 {
-      font-size: 2rem;
-      color: #00bcd4;
-    }
-    .content-block p {
-      max-width: 800px;
-      margin: 1rem auto;
-      font-size: 1rem;
-      color: #ddd;
-    }
-    .model-section {
-      padding: 4rem 2rem;
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 3rem;
-      background-color: #121212;
+      gap: 2em;
+      margin-top: 2em;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 2em;
+      border-radius: 1.5em;
     }
-    .model {
-      background-color: #1e1e1e;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
-      padding: 2rem;
-      text-align: center;
-      max-width: 600px;
+    .content-block:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .content-block img {
       width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
     }
-    .model img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
+    .content-text {
+      flex: 1;
     }
-    .model h3 {
-      color: #00e5ff;
-      font-size: 1.5rem;
-    }
-    .model p {
-      font-size: 1rem;
-      color: #bbb;
-    }
-    .toggle-btn {
-      margin-top: 1rem;
-      background-color: #00e5ff;
-      color: #000;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .toggle-btn:hover {
-      background-color: #00bcd4;
+    .content-text p {
+      text-align: justify;
     }
     .toggle-section {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-      color: #ccc;
-      margin-top: 1rem;
+      display: none;
+      margin-top: 1em;
     }
-    .toggle-section.open {
-      max-height: 600px;
+    .toggle-btn {
+      margin-top: 1em;
+      padding: 0.5em 1em;
+      background: #00bfff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "\2022";
+      color: #00bfff;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
     }
     footer {
-      background-color: #111;
       text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
+      padding: 2em;
+      background: #111;
+      color: #777;
     }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 0.5rem;
-        margin-top: 1rem;
-      }
-      .main-section h1 {
-        font-size: 2rem;
-      }
+    .logo-animation {
+      display: flex;
+      justify-content: center;
+      margin-top: 3em;
+      margin-bottom: 3em;
+    }
+    .logo-animation img {
+      height: 120px;
+      animation: slideIn 1s ease-in-out;
+    }
+    @keyframes slideIn {
+      0% { transform: translateX(-100px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Samaardh Aviation Logo" />
-    </div>
+    <img src="logo.png" alt="Samaardh Logo">
     <nav>
       <a href="#about">About</a>
-      <a href="#models">Models</a>
+      <a href="#services">Services</a>
+      <a href="#technology">Technology</a>
+      <a href="#models">Aircraft Models</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="main-section">
-    <h1 class="logo-animation" data-aos="fade-down">Welcome to Samaardh Aviation</h1>
-    <p data-aos="fade-up">
-      We are building a world-class eVTOL air taxi company in Saudi Arabia. Our mission is to redefine urban mobility with safe, efficient, and sustainable air transportation.
-    </p>
-    <div class="aircraft-image" data-aos="zoom-in">
-      <img src="Aircrafts.png" alt="eVTOL Aircraft Fleet" />
-    </div>
-  </section>
+  <div class="logo-animation" data-aos="fade-up">
+    <img src="logo.png" alt="Animated Logo">
+  </div>
 
-  <section class="content-block" id="about">
-    <h2 data-aos="fade-right">Why Air Taxis in Saudi Arabia?</h2>
-    <p data-aos="fade-left">
-      With vast landscapes and rapid urban development, Saudi Arabia is poised for aerial mobility solutions. Our air taxis will reduce congestion, cut travel times, and offer a sustainable transport alternative for the future.
-    </p>
-    
-  </section>
+  <div class="hero">
+    <p class="tagline">Welcome to the future – we're revolutionizing public transport in Kingdom of Saudi Arabia with teleportation-like networks for ultra-fast and seamless travel.</p>
+    <h1>Across Riyadh in 10 Minutes</h1>
+    <p>Eco-Friendly Air Mobility by Samaardh Aviation</p>
+  </div>
+
   <section id="about">
     <h2>About Us</h2>
     <p><strong>Imagine getting across Riyadh in just 10 minutes — no traffic, no noise, no pollution. At Samaardh Aviation, we’re turning that vision into a reality.</strong></p>
     <p>Samaardh Aviation is an emerging urban air mobility startup based in Saudi Arabia, focused on developing the Kingdom’s first electric air taxi platform using eVTOL (Electric Vertical Take-Off and Landing) technology.</p>
     <p>We are building a full-stack solution that integrates modern eVTOL aircraft, app-based on-demand booking, and strategically located vertiports across key urban zones like airports, hospitals, and business centers. Our model is designed to support daily commutes, premium tourism, and urgent logistics for both consumers and enterprises.</p>
   </section>
-  
+
   <section id="services">
     <h2>Our Services</h2>
     <div class="content-block" data-aos="fade-up">
@@ -246,6 +236,8 @@
       </div>
     </div>
 
+    <!-- Models content remains unchanged -->
+    <!-- You can copy that section from your original file or request me to clean it up too -->
     <div class="content-block" data-aos="fade-up">
       <div class="content-text">
         <h3>Model B: Cargo Falcon</h3>
