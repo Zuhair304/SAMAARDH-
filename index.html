@@ -135,9 +135,103 @@
       width: 1em;
       margin-left: -1em;
     }
+    /* Accordion Styles */
+    .accordion-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #333;
+    }
+    .accordion-header {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      color: #00bfff;
+      font-size: 1.2em;
+      font-weight: 600;
+      padding: 0.5em 0;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .accordion-header .plus {
+      font-size: 1.5em;
+      transition: transform 0.3s ease;
+    }
+    .accordion-header.open .plus {
+      transform: rotate(45deg);
+    }
+    .accordion-content {
+      display: none;
+      padding: 0.5em 0 1em 0;
+    }
+    .accordion-content p {
+      text-align: justify;
+      color: #ccc;
+      margin: 0;
+    }
   </style>
 </head>
 <body>
+  <section class="services">
+    <h2 style="text-align: center; color: #00bfff;">Our Services</h2>
+    <div class="accordion-item">
+      <button class="accordion-header" onclick="toggleAccordion(this)">
+        On-Demand Air Taxi <span class="plus">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>Skip traffic with our vertical take-off and landing aircrafts. Enjoy fast, reliable, and eco-friendly urban air mobility.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header" onclick="toggleAccordion(this)">
+        Smart Cargo Delivery <span class="plus">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>Revolutionize logistics with our AI-driven eVTOL drones, ensuring faster, safer, and cost-effective parcel delivery across cities.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header" onclick="toggleAccordion(this)">
+        Emergency Response <span class="plus">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>Reach emergencies in record time. Our eVTOL rescue service provides rapid access to remote or congested areas, saving lives when seconds count.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header" onclick="toggleAccordion(this)">
+        Aerial Survey & Monitoring <span class="plus">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>Conduct environmental monitoring, construction inspection, and infrastructure analysis with precision using our advanced aerial tech.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header" onclick="toggleAccordion(this)">
+        Tourism & VIP Transfers <span class="plus">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>Experience breathtaking aerial views and elite travel with our luxurious and private air mobility solutions for tourists and executives.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      const isOpen = content.style.display === 'block';
+
+      document.querySelectorAll('.accordion-content').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.accordion-header').forEach(btn => btn.classList.remove('open'));
+
+      if (!isOpen) {
+        content.style.display = 'block';
+        button.classList.add('open');
+      }
+    }
+  </script>
+</body>
+</html>
 
   <header>
     <img src="logo.png" alt="Samaardh Aviation Logo">
@@ -183,21 +277,56 @@
 </body>
 </html>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="content-block" data-aos="fade-up">
-      <div class="content-text">
-        <ul>
-          <li><strong>On-Demand Air Taxi</strong><br>Skip traffic with our electric vertical take-off and landing (eVTOL) aircraft, designed for short, efficient urban flights. Reach your destination across the city in under 10 minutes.</li>
-          <li><strong>Smart Booking Platform</strong><br>Easily book flights through our intuitive mobile app with real-time route customization, dynamic pricing, and instant confirmation — just like calling a ride.</li>
-          <li><strong>Strategic Vertiport Network</strong><br>Take off and land from conveniently located vertiports across Riyadh (and soon other cities), including airports, business hubs, and tourism destinations.</li>
-          <li><strong>Zero Emissions, Quiet Flight</strong><br>Our aircraft are fully electric and designed for low-noise operations, offering a cleaner, quieter alternative to traditional transport.</li>
-          <li><strong>Premium Urban Travel</strong><br>Enjoy a high-end travel experience tailored for professionals, tourists, and time-sensitive commuters — no crowds, no delays, just seamless flying.</li>
-        </ul>
-      </div>
-      <img src="Aircrafts.png" alt="eVTOL Aircraft">
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="content-block" data-aos="fade-up">
+    <div class="content-text">
+      <ul class="accordion-list">
+        <li>
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <strong>On-Demand Air Taxi</strong> <span class="plus">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>Skip traffic with our electric vertical take-off and landing (eVTOL) aircraft, designed for short, efficient urban flights. Reach your destination across the city in under 10 minutes.</p>
+          </div>
+        </li>
+        <li>
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <strong>Smart Booking Platform</strong> <span class="plus">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>Easily book flights through our intuitive mobile app with real-time route customization, dynamic pricing, and instant confirmation — just like calling a ride.</p>
+          </div>
+        </li>
+        <li>
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <strong>Strategic Vertiport Network</strong> <span class="plus">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>Take off and land from conveniently located vertiports across Riyadh (and soon other cities), including airports, business hubs, and tourism destinations.</p>
+          </div>
+        </li>
+        <li>
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <strong>Zero Emissions, Quiet Flight</strong> <span class="plus">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>Our aircraft are fully electric and designed for low-noise operations, offering a cleaner, quieter alternative to traditional transport.</p>
+          </div>
+        </li>
+        <li>
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <strong>Premium Urban Travel</strong> <span class="plus">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>Enjoy a high-end travel experience tailored for professionals, tourists, and time-sensitive commuters — no crowds, no delays, just seamless flying.</p>
+          </div>
+        </li>
+      </ul>
     </div>
-  </section>
+    <img src="Aircrafts.png" alt="eVTOL Aircraft">
+  </div>
+</section>
 
   <section id="technology">
     <h2>Our Technology</h2>
