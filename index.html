@@ -64,11 +64,13 @@
       max-width: 1000px;
       margin: auto;
     }
-    h1 {
+    h1, h2 {
       font-family: 'DM Sans', sans-serif;
-      font-size: 3em;
+      font-size: 2.5em;
       font-weight: 700;
       margin: 0.3em 0;
+      text-align: center;
+      color: #00bfff;
     }
     .section-highlight {
       text-align: center;
@@ -76,14 +78,6 @@
       background: #1a1a1a;
       font-size: 2em;
       font-weight: 600;
-      color: #00bfff;
-    }
-    #about h1 {
-      font-size: 3em;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      margin-bottom: 0.2em;
-      text-align: center;
       color: #00bfff;
     }
     .content-block {
@@ -110,10 +104,34 @@
     .content-text p {
       text-align: justify;
     }
-    .toggle-section {
-      display: none;
-      margin-top: 1em;
+
+    /* Accordion styles */
+    .accordion-list {
+      list-style: none;
+      padding: 0;
     }
+    .accordion-header {
+      width: 100%;
+      text-align: left;
+      background: rgba(0, 191, 255, 0.1);
+      border: none;
+      padding: 1em;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #00bfff;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-bottom: 0.5em;
+    }
+    .accordion-content {
+      display: none;
+      padding: 0.5em 1em;
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 2px solid #00bfff;
+      border-radius: 0 8px 8px 8px;
+      margin-bottom: 1em;
+    }
+
     .toggle-btn {
       margin-top: 1em;
       padding: 0.5em 1em;
@@ -123,10 +141,7 @@
       border-radius: 8px;
       cursor: pointer;
     }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+
     ul li::before {
       content: "\2022";
       color: #00bfff;
@@ -134,6 +149,14 @@
       display: inline-block;
       width: 1em;
       margin-left: -1em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #111;
+      font-size: 0.9em;
+      color: #aaa;
     }
   </style>
 </head>
@@ -143,8 +166,9 @@
     <img src="logo.png" alt="Samaardh Aviation Logo">
     <nav>
       <a href="#about">About</a>
-      <a href="#vision">Vision</a>
-      <a href="#aircraft">Aircraft</a>
+      <a href="#services">Services</a>
+      <a href="#technology">Technology</a>
+      <a href="#models">Aircraft</a>
     </nav>
   </header>
 
@@ -154,86 +178,73 @@
   </section>
 
   <section class="section-highlight" style="
-  background: url('Skyline.jpg') center/cover no-repeat fixed;
-  position: relative;
-  color: white;
-  text-align: center;
-  padding: 5em 2em;
-  font-style: italic;
-  font-size: 2.5em;
-  font-weight: 600;
-">
-  <div style="
-    background-color: rgba(0, 0, 0, 0.5);
-    display: inline-block;
-    padding: 1em 2em;
-    border-radius: 1em;
+    background: url('Skyline.jpg') center/cover no-repeat fixed;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 5em 2em;
+    font-style: italic;
+    font-size: 2.5em;
+    font-weight: 600;
   ">
-    Across Riyadh in 10 Minutes.
-  </div>
-</section>
+    <div style="
+      background-color: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      padding: 1em 2em;
+      border-radius: 1em;
+    ">
+      Across Riyadh in 10 Minutes.
+    </div>
+  </section>
 
- <section id="about">
+  <section id="about">
     <h2>About Us</h2>
     <p><strong>Imagine getting across Riyadh in just 10 minutes — no traffic, no noise, no pollution. At Samaardh Aviation, we’re turning that vision into a reality.</strong></p>
     <p>Samaardh Aviation is an emerging urban air mobility startup based in Saudi Arabia, focused on developing the Kingdom’s first electric air taxi platform using eVTOL (Electric Vertical Take-Off and Landing) technology.</p>
     <p>We are building a full-stack solution that integrates modern eVTOL aircraft, app-based on-demand booking, and strategically located vertiports across key urban zones like airports, hospitals, and business centers. Our model is designed to support daily commutes, premium tourism, and urgent logistics for both consumers and enterprises.</p>
   </section>
 
-</body>
-</html>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="content-block" data-aos="fade-up">
-    <div class="content-text">
-      <ul class="accordion-list">
-        <li>
-          <button class="accordion-header" onclick="toggleAccordion(this)">
-            <strong>On-Demand Air Taxi</strong> <span class="plus">+</span>
-          </button>
-          <div class="accordion-content">
-            <p>Skip traffic with our electric vertical take-off and landing (eVTOL) aircraft, designed for short, efficient urban flights. Reach your destination across the city in under 10 minutes.</p>
-          </div>
-        </li>
-        <li>
-          <button class="accordion-header" onclick="toggleAccordion(this)">
-            <strong>Smart Booking Platform</strong> <span class="plus">+</span>
-          </button>
-          <div class="accordion-content">
-            <p>Easily book flights through our intuitive mobile app with real-time route customization, dynamic pricing, and instant confirmation — just like calling a ride.</p>
-          </div>
-        </li>
-        <li>
-          <button class="accordion-header" onclick="toggleAccordion(this)">
-            <strong>Strategic Vertiport Network</strong> <span class="plus">+</span>
-          </button>
-          <div class="accordion-content">
-            <p>Take off and land from conveniently located vertiports across Riyadh (and soon other cities), including airports, business hubs, and tourism destinations.</p>
-          </div>
-        </li>
-        <li>
-          <button class="accordion-header" onclick="toggleAccordion(this)">
-            <strong>Zero Emissions, Quiet Flight</strong> <span class="plus">+</span>
-          </button>
-          <div class="accordion-content">
-            <p>Our aircraft are fully electric and designed for low-noise operations, offering a cleaner, quieter alternative to traditional transport.</p>
-          </div>
-        </li>
-        <li>
-          <button class="accordion-header" onclick="toggleAccordion(this)">
-            <strong>Premium Urban Travel</strong> <span class="plus">+</span>
-          </button>
-          <div class="accordion-content">
-            <p>Enjoy a high-end travel experience tailored for professionals, tourists, and time-sensitive commuters — no crowds, no delays, just seamless flying.</p>
-          </div>
-        </li>
-      </ul>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="content-block" data-aos="fade-up">
+      <div class="content-text">
+        <ul class="accordion-list">
+          <li>
+            <button class="accordion-header" onclick="toggleAccordion(this)">On-Demand Air Taxi</button>
+            <div class="accordion-content">
+              <p>Skip traffic with our electric vertical take-off and landing (eVTOL) aircraft, designed for short, efficient urban flights.</p>
+            </div>
+          </li>
+          <li>
+            <button class="accordion-header" onclick="toggleAccordion(this)">Smart Booking Platform</button>
+            <div class="accordion-content">
+              <p>Easily book flights through our mobile app with real-time route customization, dynamic pricing, and instant confirmation.</p>
+            </div>
+          </li>
+          <li>
+            <button class="accordion-header" onclick="toggleAccordion(this)">Strategic Vertiport Network</button>
+            <div class="accordion-content">
+              <p>Take off and land from strategically located vertiports across Riyadh, including airports, business hubs, and tourism zones.</p>
+            </div>
+          </li>
+          <li>
+            <button class="accordion-header" onclick="toggleAccordion(this)">Zero Emissions, Quiet Flight</button>
+            <div class="accordion-content">
+              <p>Our aircraft are fully electric and designed for low-noise operations, offering a cleaner, quieter urban travel solution.</p>
+            </div>
+          </li>
+          <li>
+            <button class="accordion-header" onclick="toggleAccordion(this)">Premium Urban Travel</button>
+            <div class="accordion-content">
+              <p>Enjoy a high-end travel experience tailored for professionals, tourists, and commuters — no crowds, no delays, just seamless flying.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <img src="Aircrafts.png" alt="eVTOL Aircraft">
     </div>
-    <img src="Aircrafts.png" alt="eVTOL Aircraft">
-  </div>
-</section>
-
+  </section>
+  
   <section id="technology">
     <h2>Our Technology</h2>
     <div class="content-block" data-aos="fade-up">
