@@ -366,9 +366,25 @@
     &copy; 2025 Samaardh Aviation. All rights reserved.
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('.icon');
+      const isOpen = content.style.display === 'block';
+
+      document.querySelectorAll('.accordion-content').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.accordion-header').forEach(b => b.setAttribute('aria-expanded', 'false'));
+      document.querySelectorAll('.accordion-header .icon').forEach(i => i.textContent = '+');
+
+      if (!isOpen) {
+        content.style.display = 'block';
+        button.setAttribute('aria-expanded', 'true');
+        icon.textContent = '–';
+      }
+    }
 
     function toggleDetails(id) {
       const section = document.getElementById(`details-${id}`);
@@ -379,22 +395,7 @@
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
-
-    function toggleAccordion(button) {
-      const content = button.nextElementSibling;
-      const icon = button.querySelector('.icon');
-      const isOpen = content.style.display === 'block';
-
-      // Close all others
-      document.querySelectorAll('.accordion-content').forEach(el => el.style.display = 'none');
-      document.querySelectorAll('.accordion-header .icon').forEach(ic => ic.textContent = '+');
-
-      if (!isOpen) {
-        content.style.display = 'block';
-        icon.textContent = '–';
-      }
-    }
   </script>
-  
+
 </body>
 </html>
