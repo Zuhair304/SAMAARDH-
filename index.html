@@ -109,20 +109,31 @@
     .accordion-list {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
+
     .accordion-header {
       width: 100%;
       text-align: left;
-      background: rgba(0, 191, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
       border: none;
       padding: 1em;
       font-size: 1.1em;
       font-weight: 600;
-      color: #00bfff;
+      color: #ffffff;
       cursor: pointer;
       border-radius: 8px;
       margin-bottom: 0.5em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    .accordion-header .icon {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
     .accordion-content {
       display: none;
       padding: 0.5em 1em;
@@ -130,6 +141,7 @@
       border-left: 2px solid #00bfff;
       border-radius: 0 8px 8px 8px;
       margin-bottom: 1em;
+      color: #ddd;
     }
 
     .toggle-btn {
@@ -143,12 +155,7 @@
     }
 
     ul li::before {
-      content: "\2022";
-      color: #00bfff;
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
+      display: none;
     }
 
     footer {
@@ -210,31 +217,41 @@
       <div class="content-text">
         <ul class="accordion-list">
           <li>
-            <button class="accordion-header" onclick="toggleAccordion(this)">On-Demand Air Taxi</button>
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              On-Demand Air Taxi <span class="icon">+</span>
+            </button>
             <div class="accordion-content">
               <p>Skip traffic with our electric vertical take-off and landing (eVTOL) aircraft, designed for short, efficient urban flights.</p>
             </div>
           </li>
           <li>
-            <button class="accordion-header" onclick="toggleAccordion(this)">Smart Booking Platform</button>
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              Smart Booking Platform <span class="icon">+</span>
+            </button>
             <div class="accordion-content">
               <p>Easily book flights through our mobile app with real-time route customization, dynamic pricing, and instant confirmation.</p>
             </div>
           </li>
           <li>
-            <button class="accordion-header" onclick="toggleAccordion(this)">Strategic Vertiport Network</button>
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              Strategic Vertiport Network <span class="icon">+</span>
+            </button>
             <div class="accordion-content">
               <p>Take off and land from strategically located vertiports across Riyadh, including airports, business hubs, and tourism zones.</p>
             </div>
           </li>
           <li>
-            <button class="accordion-header" onclick="toggleAccordion(this)">Zero Emissions, Quiet Flight</button>
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              Zero Emissions, Quiet Flight <span class="icon">+</span>
+            </button>
             <div class="accordion-content">
               <p>Our aircraft are fully electric and designed for low-noise operations, offering a cleaner, quieter urban travel solution.</p>
             </div>
           </li>
           <li>
-            <button class="accordion-header" onclick="toggleAccordion(this)">Premium Urban Travel</button>
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              Premium Urban Travel <span class="icon">+</span>
+            </button>
             <div class="accordion-content">
               <p>Enjoy a high-end travel experience tailored for professionals, tourists, and commuters — no crowds, no delays, just seamless flying.</p>
             </div>
@@ -244,7 +261,7 @@
       <img src="Aircrafts.png" alt="eVTOL Aircraft">
     </div>
   </section>
-  
+
   <section id="technology">
     <h2>Our Technology</h2>
     <div class="content-block" data-aos="fade-up">
@@ -345,11 +362,11 @@
     <p>Email: zuhair304@gmail.com</p>
   </section>
 
-  <footer>
+<footer>
     &copy; 2025 Samaardh Aviation. All rights reserved.
   </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
 
@@ -365,15 +382,17 @@
 
     function toggleAccordion(button) {
       const content = button.nextElementSibling;
+      const icon = button.querySelector('.icon');
       const isOpen = content.style.display === 'block';
-      
-      // Close all other accordion contents
-      document.querySelectorAll('.accordion-content').forEach(el => {
-        el.style.display = 'none';
-      });
 
-      // Toggle current
-      content.style.display = isOpen ? 'none' : 'block';
+      // Close all others
+      document.querySelectorAll('.accordion-content').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.accordion-header .icon').forEach(ic => ic.textContent = '+');
+
+      if (!isOpen) {
+        content.style.display = 'block';
+        icon.textContent = '–';
+      }
     }
   </script>
   
