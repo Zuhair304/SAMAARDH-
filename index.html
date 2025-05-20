@@ -349,9 +349,10 @@
     &copy; 2025 Samaardh Aviation. All rights reserved.
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+
     function toggleDetails(id) {
       const section = document.getElementById(`details-${id}`);
       if (section.style.display === 'block') {
@@ -361,6 +362,20 @@
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
+
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      const isOpen = content.style.display === 'block';
+      
+      // Close all other accordion contents
+      document.querySelectorAll('.accordion-content').forEach(el => {
+        el.style.display = 'none';
+      });
+
+      // Toggle current
+      content.style.display = isOpen ? 'none' : 'block';
+    }
   </script>
+  
 </body>
 </html>
